@@ -1,0 +1,54 @@
+*{
+  background-color: #100f0f;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 2px solid #dddddd;
+}
+
+th {
+  color: white;
+  font-size: 25px;
+}
+td{
+  color: white;
+  font-size: 20px;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+input::placeholder{
+  color: white;
+  font-size: 15px;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  padding: 18px 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  color: white;
+}
+
+button {
+  padding: 0px 50px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid;
+}
+
+
