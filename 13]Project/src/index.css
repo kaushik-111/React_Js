@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: black; 
+  color: white; 
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 153, 0.25) 0px 50px 100px -20px, rgba(29, 100, 163, 0.629) 0px 30px 60px -30px, rgba(19, 111, 145, 0.35) 0px -2px 6px 0px inset; 
+}
+
+input, select {
+  height: 45px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: black; 
+  color: white; 
+  font-weight: bold;
+  font-size: 15px;
+}
+
+input::placeholder{
+  color: white;
+}
+
+button {
+  background-color: #192ac6a5;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #105cc0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #555;
+}
+
+tr:hover {
+  background-color: #777; 
+}
+
+p {
+  color: red;
+  text-align: center;
+}
