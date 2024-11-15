@@ -1,0 +1,276 @@
+/* Body styling */
+body {
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Fade-in animation for container */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes borderPulse {
+    0%, 100% {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0px 0px 30px rgba(0, 217, 255, 0.8);
+    }
+}
+
+div {
+    background-color: #1f1f1f;
+    padding: 25px 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    width: 90%;
+    max-width: 1400px;
+    margin: 20px 0;
+    animation: fadeIn 1s ease-out, borderPulse 3s infinite;
+}
+
+/* Headings and labels */
+h1 {
+    text-align: center;
+    color: #00d9ff;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+
+/* Input fields */
+form input[type="text"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #333333;
+    color: #ffffff;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    animation: boxShadowPulse 3s infinite;
+}
+
+@keyframes boxShadowPulse {
+    0%, 100% {
+        box-shadow: 0px 0px 5px rgba(0, 217, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0px 0px 10px rgba(0, 217, 255, 0.6);
+    }
+}
+
+/* Submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px rgba(0, 217, 255, 0.2);
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    animation: buttonPulse 1.5s infinite;
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0px 0px 10px rgba(0, 217, 255, 0.6); /* Enhanced glowing effect */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+thead {
+    background-color: #333333;
+}
+
+thead th {
+    padding: 12px;
+    font-weight: bold;
+    color: #00d9ff;
+    text-align: center;
+}
+
+tbody tr {
+    animation: rowShadowPulse 3s infinite;
+}
+
+@keyframes rowShadowPulse {
+    0%, 100% {
+        box-shadow: 0px 0px 5px rgba(0, 217, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0px 0px 10px rgba(0, 217, 255, 0.6);
+    }
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #1f1f1f;
+}
+
+tbody tr:hover {
+    background-color: #444444;
+}
+
+tbody td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* General button styles */
+button {
+    padding: 8px 14px;
+    margin: 0 6px;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+/* Add button with green pulse */
+@keyframes addBorderPulse {
+    0%, 100% {
+        border-color: rgba(76, 175, 80, 0.5);
+        box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.3);
+    }
+    50% {
+        border-color: rgba(76, 175, 80, 1);
+        box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.7);
+    }
+}
+
+button.add {
+    color: #4caf50;
+    border-color: rgba(76, 175, 80, 0.5);
+    animation: addBorderPulse 2s infinite;
+}
+
+/* Edit button with glowing box-shadow on hover */
+@keyframes editBorderPulse {
+    0%, 100% {
+        border-color: rgba(255, 152, 0, 0.5);
+        box-shadow: 0px 0px 5px rgba(255, 152, 0, 0.3);
+    }
+    50% {
+        border-color: rgba(255, 152, 0, 1);
+        box-shadow: 0px 0px 15px rgba(255, 152, 0, 0.6);
+    }
+}
+
+button.edit {
+    color: #ff9800;
+    border-color: rgba(255, 152, 0, 0.5);
+    animation: editBorderPulse 2s infinite;
+}
+
+/* Delete button with glowing box-shadow on hover */
+@keyframes deleteBorderGlow {
+    0%, 100% {
+        border-color: rgba(244, 67, 54, 0.5);
+        box-shadow: 0px 0px 5px rgba(244, 67, 54, 0.3);
+    }
+    50% {
+        border-color: rgba(244, 67, 54, 1);
+        box-shadow: 0px 0px 15px rgba(244, 67, 54, 0.6);
+    }
+}
+
+button.delete {
+    color: #f44336;
+    border-color: rgba(244, 67, 54, 0.5);
+    animation: deleteBorderGlow 2s infinite;
+}
+
+/* On hover - glowing effect for Edit and Delete buttons */
+button.edit:hover {
+    box-shadow: 0px 0px 10px rgba(0, 217, 255, 0.6); /* Glowing effect */
+}
+
+button.delete:hover {
+    box-shadow: 0px 0px 10px rgba(0, 217, 255, 0.6); /* Glowing effect */
+}
+/* Email Input field styling */
+form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #333333;
+    color: #ffffff;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    animation: boxShadowPulse 3s infinite;
+}
+
+form input[type="email"]:focus {
+    outline: none;
+    border: 1px solid #00d9ff;
+    box-shadow: 0px 0px 8px rgba(0, 217, 255, 0.6); /* Blue glowing effect */
+}
+
+/* Animation for email input focus */
+@keyframes boxShadowPulse {
+    0%, 100% {
+        box-shadow: 0px 0px 5px rgba(0, 217, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0px 0px 10px rgba(0, 217, 255, 0.6);
+    }
+}
+
+/* Additional styling for the label */
+form label[for="email"] {
+    color: #00d9ff;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Placeholder styling for email input */
+form input[type="email"]::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
