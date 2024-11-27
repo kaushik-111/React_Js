@@ -1,0 +1,108 @@
+* {
+  color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Light gray background */
+
+}.container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of cards */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center content horizontally */
+  padding: 20px;
+  max-width: 1500px; /* Restrict container width to 1200px */
+  margin: 0 auto; /* Center the container within the page */
+  background-color: #f9f9f9; /* Light gray background */
+  box-sizing: border-box; /* Include padding and border in width/height calculations */
+}
+
+/* Product Card */
+.product-card {
+  flex: 1 1 calc(25% - 20px); /* 4 cards per row */
+  max-width: 210px; /* Prevent cards from becoming too large */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 10px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
+.product-image {
+  width: 100%; /* Full width of the card */
+  height: auto;
+    border-radius: 6px; /* Rounded image corners */
+}
+
+/* Delivery Time */
+.delivery-time {
+  font-size: 0.9em;
+  color: #333; /* Dark gray */
+  margin-bottom: 5px;
+}
+
+/* Product Name */
+.product-name {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333; /* Dark gray */
+  margin: 5px 0;
+}
+
+/* Product Weight */
+.product-weight {
+  font-size: 0.9em;
+  color: #333; /* Medium gray */
+  margin-bottom: 10px;
+}
+
+/* Price Container */
+.price-container {
+  display: flex;
+  justify-content: space-between; /* Center price and original price */
+  align-items: center;
+  gap: 10px; /* Space between prices */
+  margin: 10px 0;
+}
+
+/* Current Price */
+.price {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333; /* Dark gray */
+}
+
+/* Original Price */
+.original-price {
+  font-size: 0.9em;
+  color: #999; /* Light gray */
+  text-decoration: line-through;
+}
+
+/* Add Button */
+.add-btn {
+  padding: 8px 15px;
+  background-color: #b6d4b070; /* Blue button */
+  color: #2ae97091; /* White text for better contrast */
+  border: 1px solid #2ae97091;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.Title{
+  color: black;
+  margin-left: 70px;
+}
