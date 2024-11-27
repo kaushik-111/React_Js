@@ -1,0 +1,139 @@
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 20px;
+  color: #ffffff;
+}
+
+/* Header Styling */
+h1 {
+  text-align: center;
+  color: #f3ec78;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Filters, Search, and Add Item Sections */
+.filters, .search-sort, .add-item {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3), 
+    0 1px 3px rgba(255, 255, 255, 0.1), 
+    inset 0 -2px 5px rgba(74, 74, 75, 0.8);
+}
+
+/* Inputs and Buttons Inside Filters */
+.filters select, .search-sort input, .search-sort button {
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Buttons Styling */
+button {
+  background: linear-gradient(135deg, #34e89e, #0f3443);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 
+    0px 5px 15px rgba(0, 0, 0, 0.3), 
+    inset 0 0 10px rgba(52, 232, 158, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0f3443, #34e89e);
+  transform: scale(1.1);
+  box-shadow: 
+    0px 8px 20px rgba(0, 0, 0, 0.5), 
+    inset 0 0 15px rgba(52, 232, 158, 0.7);
+}
+
+/* Styled Table */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  min-width: 600px;
+  margin-top: 20px;
+  background: linear-gradient(145deg, #111827);
+  color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.3), 
+    0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Table Header */
+.styled-table th {
+  padding: 12px 15px;
+  background: linear-gradient(135deg, #f3ec78, #f5af19);
+  color: #111827;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Cells */
+.styled-table td {
+  padding: 12px 15px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Table Hover Effects */
+.styled-table tr:hover td {
+  background-color: rgba(243, 236, 120, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 
+    0px 4px 10px rgba(243, 236, 120, 0.5), 
+    inset 0px 0px 10px rgba(243, 236, 120, 0.3);
+}
+
+/* No Data Found Row */
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  background: linear-gradient(135deg, #1e293b, #111827);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #34e89e, #0f3443);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0f3443, #34e89e);
+}
+.add-item input{
+  background-color: none;
+  color: white;
+}
