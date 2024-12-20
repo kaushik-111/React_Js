@@ -1,9 +1,9 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React from 'react'
 import { useState } from 'react'
+import { auth, db } from '../../firebaseconfig';
 import { Link, useNavigate } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../../firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function SignUp() {
 
@@ -11,13 +11,17 @@ export default function SignUp() {
     const [age, setAge] = useState("");
     const [city, setCity] = useState("");
     const [email, setEmail] = useState("");
-    const [pass, setPass] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const handleSignUp = async (event) => {
+        if (!name || !age || !city || !email || !password ) {
+            alert("All fields are required.");
+            return;
+          }
         event.preventDefault();
-
-        let user = await createUserWithEmailAndPassword(auth, email, pass)
+        
+        await createUserWithEmailAndPassword(auth,email,password)
         .then((data) => {
             setDoc(doc(db, "users", data.user.uid), {
                 name, age, city, email,
@@ -32,12 +36,11 @@ export default function SignUp() {
                 <input type="text" placeholder='Enter age...' onChange={e => setAge(e.target.value)}  />
                 <input type="text" placeholder='Enter city...' onChange={e => setCity(e.target.value)}  />
                 <input type="text" placeholder='Enter email...' onChange={e => setEmail(e.target.value)}  />
-                <input type="text" placeholder='Enter password...' onChange={e => setPass(e.target.value)}  />
-                <button type="submit">Submit</button>
-
+                <input type="text" placeholder='Enter password...' onChange={e => setPassword(e.target.value)}  />
+                <button type="submit"><b>SignUp</b></button>
                 <div>
-                    <Link to={"/login"}>LogIn?</Link>
-                </div>
+                <Link to={"/login"}>LogIn?</Link>
+                </div>  
             </form>
         </>
     )

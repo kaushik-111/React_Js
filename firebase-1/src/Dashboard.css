@@ -1,0 +1,307 @@
+#ds {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #1a1a2e);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  gap: 10px;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  overflow: hidden;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+      background: linear-gradient(135deg, #1e1e2f, #1a1a2e);
+  }
+  50% {
+      background: linear-gradient(135deg, #1e1e2f, #282846);
+  }
+  100% {
+      background: linear-gradient(135deg, #2a2a3d, #1a1a2e);
+  }
+}
+
+#ds #form {
+  height: 70vh;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ds form {
+  background: rgba(42, 42, 61, 0.95);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  border: 1px solid #3e3e5b;
+  animation: formBounce 3s ease-in-out infinite;
+}
+
+@keyframes formBounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-5px);
+  }
+}
+
+#ds form::before {
+  content: "Add Record";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  background: #6c63ff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0px 5px 10px rgba(108, 99, 255, 0.5);
+  animation: titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+      box-shadow: 0px 5px 10px rgba(108, 99, 255, 0.5);
+  }
+  100% {
+      box-shadow: 0px 5px 15px rgba(108, 99, 255, 1);
+  }
+}
+
+form input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin: 15px 0;
+  border: 1px solid #3e3e5b;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #1e1e2f;
+  color: #ffffff;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+form input::placeholder {
+  color: #a1a1b3;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 10px rgba(108, 99, 255, 0.8);
+}
+
+form button {
+  background: linear-gradient(to right, #6c63ff, #9c63ff);
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: buttonPulse 2s infinite;
+}
+
+@keyframes buttonPulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0px 4px 15px rgba(108, 99, 255, 0.6);
+  }
+  50% {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 20px rgba(108, 99, 255, 0.8);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0px 4px 15px rgba(108, 99, 255, 0.6);
+  }
+}
+
+form div {
+  margin-top: 20px;
+}
+
+form div a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+form div a:hover {
+  color: #9c63ff;
+}
+
+#ds #table {
+  width: 50%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 170px;
+}
+
+#ds #table::-webkit-scrollbar {
+  width: 8px;
+}
+
+#ds #table::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+}
+
+#ds #table::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#ds #table:hover::-webkit-scrollbar-thumb {
+  background: rgba(108, 99, 255, 0.3);
+}
+
+.table-container {
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(42, 42, 61, 0.95);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+.dashboard-table thead {
+  background: linear-gradient(to right, #6c63ff, #9c63ff);
+  color: #fff;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #3e3e5b;
+}
+
+.dashboard-table tbody tr:hover {
+  background-color: #3e3e5b;
+}
+
+.dashboard-table tbody td button {
+  background: linear-gradient(to right, #6c63ff, #9c63ff);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-table tbody td button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(108, 99, 255, 0.6);
+}
+  
+#ds {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  height: 100vh; 
+  display: flex;
+  gap: 20px;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+#ds #form, #ds #table {
+  width: 500px; 
+  height: 700px;
+  overflow-y: auto;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+}
+#ds #form, #ds #table {
+  width: 500px;
+  height: 700px; 
+  overflow-y: auto; 
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes tableBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes tableFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#ds #table {
+  width: 670px;
+  overflow-y: scroll;
+  scrollbar-width: thin; 
+  scrollbar-color: transparent transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: tableFadeIn 1.5s ease-out, tableBounce 3s ease-in-out infinite;
+  border-radius: 15px;
+}
+
+#ds #table:hover {
+  animation: tableFadeIn 1.5s ease-out;
+}
+
+#ds #table::-webkit-scrollbar {
+  width: 8px;
+}
+
+#ds #table::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px; 
+}
+
+#ds #table::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#ds #table:hover::-webkit-scrollbar-thumb {
+  background: rgba(108, 99, 255, 0.3); 
+}
