@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { auth, db } from "../../firebaseconfig";
 import "../Dashboard.css";
+import { auth, db } from "../../firebaseConfig";
 
 export default function DashBoard() {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState();
+  const [googleUser, setGoogleUser] = useState(null);
   const [name, setName] = useState("");
   const [sub, setSub] = useState("");
   const [email, setEmail] = useState("");
@@ -20,11 +21,17 @@ export default function DashBoard() {
     onAuthStateChanged(auth, (data) => {
       if (data) {
         setUser(data.uid);
+        setGoogleUser({
+          name: data.displayName || "Anonymous User",
+          email: data.email,
+          photoURL: data.photoURL || "https://www.example.com/default-photo.jpg",
+        });
       } else {
         navigate("/login");
       }
     });
   }, [navigate]);
+
 
   useEffect(() => {
     if (user) {
@@ -112,6 +119,8 @@ export default function DashBoard() {
   return (
     <div className="dashboard" id="ds">
       <div id="form">
+
+
         <form className="dashboard-form">
           <input
             type="text"
@@ -147,6 +156,40 @@ export default function DashBoard() {
       </div>
       <div id="table">
         <div className="table-container">
+          {googleUser && (
+            <div id="googleUserTable" style={{ margin: "20px 0" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
+                <thead>
+                  <tr>
+                    <th style={{ padding: "10px", border: "1px solid #ddd" }}>Photo</th>
+                    <th style={{ padding: "10px", border: "1px solid #ddd" }}>Name</th>
+                    <th style={{ padding: "10px", border: "1px solid #ddd" }}>Email</th>
+                    <th style={{ padding: "10px", border: "1px solid #ddd" }}>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: "10px", border: "1px solid #ddd" }}>
+                      <img
+                        src={googleUser.photoURL}
+                        alt="Google Profile"
+                        style={{ width: "50px", height: "50px", borderRadius: "100%" }}
+                      />
+                    </td>
+                    <td style={{ padding: "10px", border: "1px solid #ddd" }}>{googleUser.name}</td>
+                    <td style={{ padding: "10px", border: "1px solid #ddd" }}>{googleUser.email}</td>
+                    <td style={{ padding: "10px", border: "1px solid #ddd" }}>
+                      <button type="button" onClick={signOut} style={{ backgroundColor: "#f44336", color: "#fff", padding: "5px 10px", border: "none", borderRadius: "4px", cursor: "pointer" }}>
+                        Log Out
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
+
+
           {record.length > 0 ? (
             <table className="dashboard-table">
               <thead>
@@ -176,6 +219,7 @@ export default function DashBoard() {
           ) : (
             <center><p>No records found.</p></center>
           )}
+
         </div>
       </div>
     </div>

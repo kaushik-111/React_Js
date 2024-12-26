@@ -1,7 +1,10 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebaseconfig';
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+
+// Initialize GoogleAuthProvider
+const provider = new GoogleAuthProvider();
 
 export default function LogIn() {
   const [email, setEmail] = useState('');
@@ -32,6 +35,17 @@ export default function LogIn() {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      alert('Google sign-in successful!');
+      navigate('/dashboard', { replace: true });
+    } catch (error) {
+      console.error('Google Sign-In error:', error);
+      alert('Error during Google sign-in. Please try again.');
+    }
+  };
+
   return (
     <div id="lg">
       <form onSubmit={(event) => handleSignIn(event)}>
@@ -52,6 +66,9 @@ export default function LogIn() {
         <div>
           <Link to={'/'}>SignUp?</Link>
         </div>
+        <button type="button" onClick={handleGoogleSignIn}>
+          Sign In With Google
+        </button>
       </form>
     </div>
   );
