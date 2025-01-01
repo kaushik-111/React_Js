@@ -1,0 +1,150 @@
+/* General styles */
+html {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Skills container */
+  .skills {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+  
+  /* Skills heading */
+  .skl {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffcc00;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  
+  .sklLine {
+    font-size: 20px;
+    font-weight: 400;
+    color: #76ff03;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  
+  /* Individual skill container */
+  .ProgWidth {
+    margin: 15px 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .ProgWidth:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Skill labels */
+  .p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  /* Skill bar container */
+  .skillDiv {
+    height: 12px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Skill bar animation */
+  .skillBar {
+    height: 100%;
+    border-radius: 25px;
+    animation: growBar 2s ease-in-out;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Skill-specific bar colors with gradients */
+  .htmlBar {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  }
+  
+  .cssBar {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+  }
+  
+  .jsBar {
+    background: linear-gradient(90deg, #ffe259, #ffa751);
+  }
+  
+  .javaBar {
+    background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+  }
+  
+  .ccpBar {
+    background: linear-gradient(90deg, #f8b195, #f67280);
+  }
+  
+  .reactBar {
+    background: linear-gradient(90deg, #61dafb, #0078d7);
+  }
+  
+  .nodeBar {
+    background: linear-gradient(90deg, #6a9113, #141517);
+  }
+  
+  .sqlBar {
+    background: linear-gradient(90deg, #ee0979, #ff6a00);
+  }
+  
+  /* Bar animation */
+  @keyframes growBar {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Hover effect for skill labels */
+  .ProgWidth:hover .p {
+    color: #ffcc00;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .skills {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .p {
+      font-size: 14px;
+    }
+  
+    .skl {
+      font-size: 22px;
+    }
+  }
+  

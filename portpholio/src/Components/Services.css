@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 50px;
+    background-color: #111;
+}
+
+/* Frontend Section (Creative Design) */
+.frontend, .backend {
+    width: 45%;
+    border: 2px solid #FFBD39;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.frontend h1, .backend h2 {
+    font-family: "Playfair Display", serif;
+    color: #FFBD39;
+    text-shadow: 0 0 10px #ffbd39c2, 0 0 20px #FFBD39;
+    animation: textGlow 3s infinite ease-in-out;
+}
+
+.frontend p, .backend p {
+    color: #959595;
+    line-height: 1.5;
+}
+
+.service-box {
+    background-color: #222;
+    border: 2px solid #FFBD39;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    animation: boxGlow 1.5s ease-in-out infinite alternate;
+}
+
+.service-box:hover {
+    box-shadow: 0 0 20px rgba(255, 189, 57, 0.8);
+}
+
+/* Button Style */
+.creative-button {
+    background-color: #FFBD39;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: buttonPulse 2s infinite ease-in-out;
+}
+
+.creative-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 189, 57, 0.5);
+    animation: buttonHover 0.5s ease-out;
+}
+
+/* Keyframes */
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px #ffbd39c2, 0 0 20px #FFBD39;
+    }
+    50% {
+        text-shadow: 0 0 15px #918264, 0 0 30px #FFBD39;
+    }
+}
+
+@keyframes boxGlow {
+    0% {
+        box-shadow: 0 10px 30px rgba(255, 189, 57, 0.3);
+    }
+    100% {
+        box-shadow: 0 10px 40px rgba(255, 189, 57, 0.7);
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px #FFBD39;
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #FFBD39;
+    }
+}
+
+@keyframes buttonHover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}

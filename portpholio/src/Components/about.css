@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* About Section */
+.About {
+    height: 100vh;
+    background: linear-gradient(145deg, #0f0f0f, #202020);
+    width: 100%;
+    border: 1px solid;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Photo Section */
+.photo {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.photo img {
+    height: 90%;
+    width: 90%;
+    padding-left: 50px;
+    object-fit: contain;
+    animation: fadeIn 2s ease-in-out forwards, photoMove 4s infinite ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Text Section */
+.text {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Playfair Display", serif;
+    z-index: 1;
+    animation: textFadeIn 2s ease-in-out forwards;
+}
+
+.text h1 {
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: bold;
+    animation: fadeIn 5s ease-in-out forwards, photoMove 4s infinite ease-in-out;
+    animation: textGlow 2s infinite ease-in-out;
+
+}
+
+.text p {
+    color: #959595;
+    line-height: 30px;
+    animation: fadeIn 2s ease-in-out forwards, photoMove 4s infinite ease-in-out;
+}
+
+.text .details span {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+/* Button Section */
+.creative-button {
+    height: 50px;
+    width: 200px;
+    background-color: #FFBD39;
+    border: none;
+    border-radius: 10px;
+    font-family: "Poppins", Arial, sans-serif;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 2s ease-in-out forwards, photoMove 4s infinite ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: buttonPulse 2s infinite ease-in-out;
+}
+
+.creative-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 189, 57, 0.5);
+    animation: buttonHover 0.5s ease-out;
+}
+
+.creative-button a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Keyframes for Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for Photo Movement */
+@keyframes photoMove {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for Text Glow */
+@keyframes textGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px #333333, 0 0 20px #555555; /* Darker shades for black background */
+    }
+    50% {
+        box-shadow: 0 0 15px #444444, 0 0 30px #777777; /* Slightly lighter glow in the middle */
+    }
+}
+
+
+/* Keyframes for Text Fade-In */
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for Button Pulse */
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px #FFBD39;
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #FFBD39;
+    }
+}
+
+/* Keyframes for Button Hover Bounce */
+@keyframes buttonHover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+.text .details #pd {
+    padding-left: 70px;
+    color: #959595;
+}
+.text .details #db {
+    padding-left: 20px;
+    color: #959595;
+}
+
+.text .details #ad {
+    padding-left: 50px;
+    color: #959595;
+}
+.text .details #em {
+    padding-left: 73px;
+    color: #959595;
+}
+
+.text .details #ph {
+    padding-left: 65px;
+    color: #959595;
+}

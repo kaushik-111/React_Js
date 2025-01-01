@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+.Navbar{
+    height: 15vh;
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
+
+}
+
+.menubar{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* Remove underline from the Link element */
+/* Remove underline from Link tags */
+.menubar ul li a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Make link color inherit from the li */
+  }
+  
+  /* Styling for the menubar */
+  .menubar ul {
+    list-style: none;
+    display: flex;
+    gap: 100px; /* Space between the list items */
+  }
+  
+  /* Styling for individual list items */
+  .menubar ul li {
+    color: #FFFFFF; /* Set color to white for all list items */
+    font-weight: bold;
+    font-size: 18px;
+    position: relative; /* Position pseudo-elements relative to the li */
+    display: inline-block; /* Ensures the li takes up space based on its content */
+  }
+  
+  /* Styling for the first list item (Home) */
+  .menubar ul li:first-child {
+    color: rgb(249, 185, 56); /* Retain color for the first item */
+  }
+  
+  /* Underline pseudo-elements */
+  .menubar ul li::before,
+  .menubar ul li::after {
+    content: ''; /* Empty content for the underline */
+    position: absolute;
+    bottom: -5px; /* Position the underline 5px below the text */
+    height: 2.5px; /* Thickness of the underline */
+    background-color: rgb(249, 185, 56); /* Color of the underline */
+    width: 0; /* Start with width 0 (hidden by default) */
+    transition: width 0.5s ease-in-out; /* Smooth animation */
+  }
+  
+  /* Positioning the pseudo-elements */
+  .menubar ul li::before {
+    right: 0; /* Position the line at the right */
+  }
+  
+  .menubar ul li::after {
+    left: 0; /* Position the line at the left */
+  }
+  
+  /* Default underline for the first child (Home) */
+  .menubar ul li:first-child::before,
+  .menubar ul li:first-child::after {
+    width: 100%; /* Full width for the first child */
+    left: 0; /* Start from the left */
+    right: 0; /* End at the right */
+    color: rgb(249, 185, 56); /* Same color for the first child underline */
+  }
+  
+  /* Hover effect for all items */
+  .menubar ul li:hover::before,
+  .menubar ul li:hover::after {
+    width: 100%; /* Expand the underline to cover the full width of the text */
+    left: 0; /* Start from the left on hover */
+    right: 0; /* End at the right on hover */
+  }
+  
+.Home{
+    height: 90vh;
+    background-color:#000000 ;
+    width: 100%;
+    border: 1px solid;
+    display: flex;
+}
+.Content{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Content h1 {
+    margin-left: 95px;
+    color: rgb(249, 185, 56);
+    font-size: 50px;
+    opacity: 0; /* Initially, text is hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Text starts invisible */
+        transform: translateY(-20px); /* Start from slightly above */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* End at its normal position */
+    }
+}
+
+.Content h1 span{
+    color: white;
+}
+.Content h1 p{
+    color:rgb(249, 185, 56) ;
+    font-weight: bold;
+    font-size: 30px;
+}
+.photo{
+    height: 100%;
+    width: 50%;
+}
+.photo img{
+  height: 90%;
+    width: 90%;
+    object-fit: contain;
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
+
+}
